@@ -1,0 +1,250 @@
+body {
+  background-image: url('https://i.pinimg.com/1200x/f6/91/66/f6916664a580bb5f462f559b15de91f6.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: 'Cairo', 'Tajawal', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  color: #fff;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  direction: ltr;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(20, 0, 0, 0.52);
+  z-index: -1;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap');
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin: 30px 0 20px 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 1px 2px 16px #ffffff88;
+}
+
+form {
+  background: rgba(30, 0, 0, 0.92);
+  max-width: 400px;
+  margin: 20px auto 30px auto;
+  padding: 30px 25px 22px 25px;
+  border-radius: 18px;
+  box-shadow: 0 6px 28px 0 rgba(255, 59, 59, 0.16), 0 1.5px 3px 0 rgba(0,0,0,0.12);
+  border: 1.5px solid #ff3b3b;
+  border-top: 3.5px solid #ff3b3b;
+  border-left: 2.5px solid #fff;
+  border-right: 2.5px solid #b71c1c;
+  border-bottom: 2.5px solid #111;
+}
+
+label,
+select,
+input[type="file"],
+textarea,
+input[type="text"] {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 17px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: border 0.2s, background 0.2s;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+label {
+  background: none;
+  border: none;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ff3b3b;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #fff;
+  background: #ffffff;
+  outline: none;
+}
+
+button {
+  background: linear-gradient(92deg, #ff3b3b 70%, #1a1a1a 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(255,59,59,0.11);
+  margin: 7px 8px 0 0;
+  cursor: pointer;
+  transition: background 0.22s, box-shadow 0.22s;
+}
+
+button[type="button"] {
+  background: linear-gradient(92deg, #b71c1c 70%, #ff3b3b 100%);
+  color: #fff;
+}
+
+button:hover, button:focus {
+  background: linear-gradient(92deg, #fff 0%, #ff3b3b 100%);
+  color: #b71c1c;
+  box-shadow: 0 4px 16px rgba(255,59,59,0.18);
+}
+
+#codeDisplayWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 18px auto 0 auto;
+  max-width: 340px;
+}
+
+#codeDisplay {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #ff3b3b;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: #181818;
+  border: 1px solid #ff3b3b;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px 0 rgba(255,59,59,0.08);
+  flex: 1;
+  margin-right: 7px;
+}
+
+#copyCodeBtn {
+  background: none;
+  border: none;
+  padding: 0 5px;
+  cursor: pointer;
+  outline: none;
+  color: #ff3b3b;
+  transition: color 0.2s;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+#copyCodeBtn svg {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  transition: color 0.2s;
+}
+
+#copyCodeBtn:hover svg,
+#copyCodeBtn.copied svg {
+  color: #fff;
+  stroke: #fff;
+}
+
+#copyCodeBtn.copied {
+  color: #fff;
+  animation: copiedAnim 0.6s;
+}
+
+@keyframes copiedAnim {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.18); }
+  80% { transform: scale(0.93); }
+  100% { transform: scale(1); }
+}
+
+#fileInfo {
+  text-align: center;
+  color: #ff3b3b;
+  font-weight: 600;
+  margin: 12px 0 8px 0;
+}
+
+#filePreview {
+  max-height: 300px;
+  overflow: auto;
+  margin: 10px auto 12px auto;
+  background: #181818;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #ff3b3b;
+  box-shadow: 0 1px 8px 0 rgba(255,59,59,0.04);
+  font-size: 1rem;
+}
+
+#filePreview pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.04em;
+}
+
+/* Ensure video previews fit nicely */
+#filePreview video {
+  max-width: 100%;
+  max-height: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+#downloadBtn {
+  display: block;
+  margin: 16px auto 0 auto;
+  padding: 14px 36px;
+  background: linear-gradient(92deg, #b71c1c, #ff3b3b 80%);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(255,59,59,0.17);
+  transition: background 0.22s, color 0.22s;
+}
+
+#downloadBtn:hover, #downloadBtn:focus {
+  background: linear-gradient(92deg, #fff 0%, #ff3b3b 100%);
+  color: #b71c1c;
+}
+
+#fileLink {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 1.1rem;
+}
+
+#fileLink a {
+  color: #ff3b3b;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+#fileLink a:hover {
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  form, #codeDisplay, #filePreview, #codeDisplayWrapper {
+    max-width: 98vw;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}

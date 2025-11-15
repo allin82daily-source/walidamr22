@@ -1,0 +1,21 @@
+<!-- Client-side: upload to server example (fetch + FormData) -->
+<input type="file" id="fileInput" />
+<label><input type="checkbox" id="publicCheck" /> Share publicly</label>
+<button id="uploadBtn">Upload</button>
+<script>
+document.getElementById('uploadBtn').onclick = async () => {
+  const f = document.getElementById('fileInput').files[0];
+  if (!f) return alert('Choose a file');
+  const fd = new FormData();
+  fd.append('file', f);
+  fd.append('public', document.getElementById('publicCheck').checked ? 'true' : 'false');
+  const resp = await fetch('/api/upload', { method: 'POST', body: fd });
+  const data = await resp.json();
+  if (data.ok) {
+    alert('Uploaded. Your code: ' + data.code);
+    // show to user, add copy button etc
+  } else {
+    alert('Upload failed: ' + data.error);
+  }
+};
+</script>

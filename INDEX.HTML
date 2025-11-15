@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>File Share by Code</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Modern Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Upload Your File</h1>
+  <form id="uploadForm">
+    <label>Select file type:</label>
+    <select id="fileType">
+      <option value="image">𝐏𝐈𝐂𝐓𝐔𝐑𝐄</option>
+      <option value="video">𝐕𝐈𝐃𝐄𝐎</option>
+      <option value="text">𝐓𝐄𝐗𝐓 (𝐅𝐈𝐋𝐄)</option>
+      <option value="text-write">𝐓𝐄𝐗𝐓 (𝐖𝐑𝐈𝐓𝐄 𝐇𝐄𝐑𝐄)</option>
+      <option value="audio">𝐀𝐔𝐃𝐈𝐎</option>
+    </select>
+
+    <input type="file" id="fileInput" required />
+    <textarea id="textWriteArea" placeholder="Write your text here..." style="display:none"></textarea>
+
+    <!-- New: public share checkbox -->
+    <label style="margin-top:6px; font-weight:700; color:#fff;">
+      <input type="checkbox" id="sharePublicCheckbox" style="margin-right:8px;" />
+      Share this code with everyone (public)
+    </label>
+
+    <button type="submit">Upload</button>
+    <button type="button" onclick="window.location.href='download.html'">Go to Download Page</button>
+  </form>
+  <div id="codeDisplayWrapper">
+    <div id="codeDisplay"></div>
+    <!-- Copy button will be injected here dynamically -->
+  </div>
+  <script src="script.js"></script>
+</body>
+<link rel="stylesheet" href="style.css" />
+</html>

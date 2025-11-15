@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Download File</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Download Your File</h1>
+  <button onclick="window.location.href='index.html'">Go to Upload Page</button>
+  <form id="downloadForm">
+    <input type="text" id="codeInput" placeholder="Enter your code" required />
+    <button type="submit">Preview</button>
+  </form>
+
+  <!-- New: browse public/shared codes -->
+  <div style="text-align:center; margin-top:10px;">
+    <button id="showPublicBtn" type="button">Show Public Shared Codes</button>
+  </div>
+  <div id="publicList" style="max-width:420px; margin:12px auto 0 auto;"></div>
+
+  <div id="fileInfo"></div>
+  <div id="filePreview"></div>
+  <button id="downloadBtn" style="display:none;">Download</button>
+  <div id="fileLink"></div>
+  <script src="script.js"></script>
+</body>
+<link rel="stylesheet" href="style.css" />
+</html>
